@@ -34,6 +34,9 @@ function Question2(n) {
 
 // Question3 - Make Array Consecutive 2
 
-function Question3(statues) {
-
+function Question3(sequence) {
+    console.log(Math.max(...sequence))
+    return Math.max(...sequence)-Math.min(...sequence)+1-sequence.length
 }
+
+// console.log(Question3([100, 1, 15, 33]))
