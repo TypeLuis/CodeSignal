@@ -40,3 +40,25 @@ function Question3(sequence) {
 }
 
 // console.log(Question3([100, 1, 15, 33]))
+
+
+
+// Question4 - almostIncreasingSequence
+
+function Question4(sequence) {
+    let chance = 1
+    // console.log('sequence', sequence)
+    sequence.slice(1).map((x, i) => {
+        const leftIndex = sequence[i]
+        const rightIndex = x
+        // console.log(leftIndex, rightIndex)
+
+        leftIndex > rightIndex && chance--
+        // if(leftIndex > rightIndex){}
+
+    })
+    if(chance >= 0) return true
+    else return false
+}
+
+console.log(Question4([3, 1, 7, 8, 10, 20, 25]))
