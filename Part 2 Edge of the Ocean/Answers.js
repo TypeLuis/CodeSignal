@@ -49,16 +49,22 @@ function Question4(sequence) {
     let chance = 1
     // console.log('sequence', sequence)
     sequence.slice(1).map((x, i) => {
-        const leftIndex = sequence[i]
-        const rightIndex = x
-        // console.log(leftIndex, rightIndex)
+        const currentIndex = sequence[i]
+        const NextIndex = x
+        // console.log(currentIndex, NextIndex)
 
-        leftIndex > rightIndex && chance--
-        // if(leftIndex > rightIndex){}
+        // currentIndex >= NextIndex ? chance-- && sequence.splice(NextIndex, 1) : 
+        if(currentIndex >= NextIndex){
+            chance--
+            if(currentIndex >= sequence[i+2] && NextIndex <= sequence[i-1]){
+                chance --
+            }
+        }
 
     })
+    console.log(sequence, chance)
     if(chance >= 0) return true
     else return false
 }
 
-console.log(Question4([3, 1, 7, 8, 10, 20, 25]))
+console.log(Question4([1, 2, 5, 3, 5]))
