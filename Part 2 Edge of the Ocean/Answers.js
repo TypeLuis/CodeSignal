@@ -1,6 +1,10 @@
+
+
+const edgeOfTheOcean = {}
+
 // Question1 - adjacentElementsProduct
 
-function Question1(Arr) {
+edgeOfTheOcean.Question1 = function (Arr) {
     // the first two multipied is maxNum
     let maxNumber = Arr[0] * Arr[1]
 
@@ -13,7 +17,7 @@ function Question1(Arr) {
     return maxNumber
 }
 
-function Question1Diff(Arr) {
+edgeOfTheOcean.Question1Diff = function (Arr) {
     // Slices the first number of Arr then maps the sliced arr to multiply x with the index of the original arr
     return Math.max(...Arr.slice(1).map((x, i) => [x * Arr[i]]))
 }
@@ -24,7 +28,7 @@ function Question1Diff(Arr) {
 
 // Question2 - ShapeArea
 
-function Question2(n) {
+edgeOfTheOcean.Question2 = function (n) {
     return n * n + (n - 1) * (n - 1);
 }
 
@@ -34,7 +38,7 @@ function Question2(n) {
 
 // Question3 - Make Array Consecutive 2
 
-function Question3(sequence) {
+edgeOfTheOcean.Question3 = function (sequence) {
     console.log(Math.max(...sequence))
     return Math.max(...sequence)-Math.min(...sequence)+1-sequence.length
 }
@@ -45,7 +49,7 @@ function Question3(sequence) {
 
 // Question4 - almostIncreasingSequence
 
-function Question4(sequence) {
+edgeOfTheOcean.Question4 = function (sequence) {
     let chance = 1
     // console.log('sequence', sequence)
     sequence.slice(1).map((x, i) => {
@@ -74,31 +78,24 @@ function Question4(sequence) {
 
 // Question5 - matrixElementsSum
 
-function Question5(matrix){
+// Add up all values that don't appear below a 0
 
+
+// function checks left to right 
+edgeOfTheOcean.Question5 = function (matrix){
+    for(var r=0,j=0;j<matrix[0].length;j++){
+      for(var i=0;i<matrix.length;i++){
+        if(matrix[i][j]===0) break
+        else r+=matrix[i][j]
+      }
+  }
+  return r
 }
 
+// const randomMatrix = Array.from({length: 10}, () => Array.from({length: 5}, () => Math.floor(Math.random() * 5)))
 
-function MyQuestion(s, t){
-    const biggestLen = s.length > t.length ? s.length : t.length
-    let count = 0
-
-    for(let i=0; i < biggestLen; i++){
-        let replicaS = s.split('')
-        let replicaT = t.split('')
-        replicaS.splice(i, 1)
-        replicaT.splice(i, 1)
-        replicaS = replicaS.join('')
-        replicaT = replicaT.join('')
+// console.log(randomMatrix)
+// console.log(Question5(randomMatrix))
 
 
-        console.log(replicaS, t)
-        // console.log(replicaT, t)
-        if(!isNaN(s[i]) && replicaS < t) count ++
-        else if (!isNaN(t[i]) && s < replicaT) count ++
-    }
-    return count
-}
-
-
-console.log(MyQuestion('ab12c', 'ab24z'))
+module.exports = edgeOfTheOcean

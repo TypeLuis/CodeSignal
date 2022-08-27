@@ -32,8 +32,9 @@ theJourneyBegins.Question3 = function (inputString) {
     return inputString.toLowerCase() === reverse.toLowerCase()
 }
 
-console.log(theJourneyBegins.Question3('Step on no pets'))
+// console.log(theJourneyBegins.Question3('Step on no pets'))
 
-console.log(theJourneyBegins)
+// console.log(theJourneyBegins)
+
 
 module.exports = theJourneyBegins

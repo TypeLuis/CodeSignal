@@ -29,6 +29,9 @@ describe('Properly adds two numbers', () => {
     testForQuestion1(132784,31774663,31907447);
 })
 
+
+
+
 const testForQuestion2 = (year, century) => {
     test(`determines the year ${year} to be in ${century} century`, () => {
         expect(
@@ -43,6 +46,9 @@ describe('Given a year, determine what century is it in \n Example 1: year = 190
     testForQuestion2(1601,17)
     testForQuestion2(2022,21)
 })
+
+
+
 
 const testForQuestion3 = (word, answer) => {
     test(`checking if ${word} is ${answer}`, () => {
