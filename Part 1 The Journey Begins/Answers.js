@@ -1,6 +1,8 @@
 // Question 1 - Add
 
-function Question1(param1, param2) {
+const theJourneyBegins = {}
+
+theJourneyBegins.Question1 = function (param1, param2) {
     return param1 + param2
 }
 
@@ -9,7 +11,7 @@ function Question1(param1, param2) {
 
 // Question 2 - centuryFromYear
 
-function Question2(year) {
+theJourneyBegins.Question2 = function (year) {
     const cent = year / 100
 
     // checks if there's a remainder in centuary 
@@ -25,9 +27,13 @@ function Question2(year) {
 
 // Question 3 - checkPalindrome
 
-function Question3(inputString) {
+theJourneyBegins.Question3 = function (inputString) {
     const reverse = inputString.split('').reverse().join('')
-    return inputString === reverse
+    return inputString.toLowerCase() === reverse.toLowerCase()
 }
 
-console.log(Question3('kqlk'))
+console.log(theJourneyBegins.Question3('Step on no pets'))
+
+console.log(theJourneyBegins)
+
+module.exports = theJourneyBegins
