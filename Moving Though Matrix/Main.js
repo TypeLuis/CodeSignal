@@ -27,9 +27,11 @@ dict.diagnal = (matrix) => {
         
         for (let b = 0, d=matrix.length -1; b <matrix.length; b++, d--){
             try {
-                const test = matrix[i +b ][i +b - 1]
-                console.log(test, i + b , i+b-1)
-                // if (test != undefined) console.log(test)
+                const test = matrix[b][d - i]
+                const test2 = matrix[d][b + i]
+                console.log(test2,d,b+i)
+                // console.log( d , d - i)
+                // if (test != undefined) console.log(test, b, d - i)
                 
             } catch (error) {
             }
@@ -38,6 +40,10 @@ dict.diagnal = (matrix) => {
 }
 
 console.log(dict.diagnal(Arr))
+
+dict.diagnalOverFlow = (matrix) => {
+    
+}
 
 
 // top To Bottom Left To Right
