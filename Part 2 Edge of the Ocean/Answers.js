@@ -81,21 +81,36 @@ edgeOfTheOcean.Question4 = function (sequence) {
 // Add up all values that don't appear below a 0
 
 
-// function checks left to right 
+// function checks top to bottom 
 edgeOfTheOcean.Question5 = function (matrix){
-    for(var r=0,j=0;j<matrix[0].length;j++){
+    for(var r=0,j=0, b=matrix[0].length - 1;j<matrix[0].length;j++, b--){
+        console.log(j, b)
+        // console.log(matrix[j][b])
       for(var i=0;i<matrix.length;i++){
-        if(matrix[i][j]===0) break
-        else r+=matrix[i][j]
+        console.log(matrix[i][b])
+        // console.log(matrix[j][matrix[j].length - i])
+        // if(matrix[i][j]===0) break
+        // else r+=matrix[i][j]
       }
   }
   return r
 }
 
-// const randomMatrix = Array.from({length: 10}, () => Array.from({length: 5}, () => Math.floor(Math.random() * 5)))
+const randomMatrix = Array.from({length: 10}, () => Array.from({length: 5}, () => Math.floor(Math.random() * 5)))
 
 // console.log(randomMatrix)
-// console.log(Question5(randomMatrix))
+console.log(edgeOfTheOcean.Question5([
+  [ 2, 1, 2, 2, 2 ],
+  [ 2, 0, 3, 3, 2 ],
+  [ 3, 4, 3, 3, 4 ],
+  [ 1, 4, 4, 1, 4 ],
+  [ 4, 1, 1, 4, 0 ],
+  [ 0, 4, 3, 2, 1 ],
+  [ 2, 0, 2, 2, 0 ],
+  [ 4, 1, 1, 4, 3 ],
+  [ 2, 1, 2, 4, 1 ],
+  [ 0, 0, 0, 1, 0 ]
+]))
 
 
 module.exports = edgeOfTheOcean
