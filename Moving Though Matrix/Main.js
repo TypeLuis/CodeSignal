@@ -39,11 +39,24 @@ dict.diagnal = (matrix) => {
     }
 }
 
-console.log(dict.diagnal(Arr))
+// console.log(dict.diagnal(Arr))
 
+
+// Found https://stackoverflow.com/questions/21346343/traverse-an-array-diagonally
 dict.diagnalOverFlow = (matrix) => {
-    
+    for (let k = 0; k <= 2 * (matrix.length - 1); ++k) {
+        for (let y = 0; y < matrix.length; ++y) {
+            let x = k - y;
+            if (x < 0 || x >= matrix.length) {
+                // Coordinates are out of bounds; skip.
+            } else {
+                console.log(matrix[y][x])
+            }
+        }
+    }
 }
+
+console.log(dict.diagnalOverFlow(Arr))
 
 
 // top To Bottom Left To Right
