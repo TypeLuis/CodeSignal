@@ -83,14 +83,12 @@ edgeOfTheOcean.Question4 = function (sequence) {
 
 // function checks top to bottom 
 edgeOfTheOcean.Question5 = function (matrix){
-    for(var r=0,j=0, b=matrix[0].length - 1;j<matrix[0].length;j++, b--){
-        console.log(j, b)
-        // console.log(matrix[j][b])
+    for(var r=0,j=0;j<matrix[0].length;j++){
+
       for(var i=0;i<matrix.length;i++){
-        console.log(matrix[i][b])
-        // console.log(matrix[j][matrix[j].length - i])
-        // if(matrix[i][j]===0) break
-        // else r+=matrix[i][j]
+        
+        if(matrix[i][j]===0) break
+        else r+=matrix[i][j]
       }
   }
   return r

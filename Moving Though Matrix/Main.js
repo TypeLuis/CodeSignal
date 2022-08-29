@@ -63,6 +63,8 @@ dict.diagnalOverFlow = (matrix) => {
         
     }
 
+    // console.log(Arr)
+
     for (let k = 0; k <= matrix.length - 1; k++) {
         let tempResult = [];
         let arr = Arr.filter((a) => a.length > 0);
