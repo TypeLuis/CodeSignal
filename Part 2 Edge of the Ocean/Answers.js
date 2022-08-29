@@ -99,7 +99,7 @@ edgeOfTheOcean.Question5 = function (matrix){
 const randomMatrix = Array.from({length: 10}, () => Array.from({length: 5}, () => Math.floor(Math.random() * 5)))
 
 // console.log(randomMatrix)
-console.log(edgeOfTheOcean.Question5([
+console.log(edgeOfTheOcean.Question5([ 
   [ 2, 1, 2, 2, 2 ],
   [ 2, 0, 3, 3, 2 ],
   [ 3, 4, 3, 3, 4 ],

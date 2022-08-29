@@ -45,7 +45,7 @@ dict.diagnal = (matrix) => {
 // Found https://stackoverflow.com/questions/21346343/traverse-an-array-diagonally
 dict.diagnalOverFlow = (matrix) => {
     console.log(matrix)
-    const Arr = []
+    const Arr = []  
     const result = []
     for (let k = 0; k <= 2 * (matrix.length - 1); ++k) {
         const yMin = Math.max(0, k - matrix.length + 1);
