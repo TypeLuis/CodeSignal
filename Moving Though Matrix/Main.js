@@ -44,21 +44,39 @@ dict.diagnal = (matrix) => {
 
 // Found https://stackoverflow.com/questions/21346343/traverse-an-array-diagonally
 dict.diagnalOverFlow = (matrix) => {
+    console.log(matrix)
     const Arr = []
+    const result = []
     for (let k = 0; k <= 2 * (matrix.length - 1); ++k) {
         const yMin = Math.max(0, k - matrix.length + 1);
         const yMax = Math.min(matrix.length - 1, k);
         const temp = []
-        const dict = {}
         for (let y = yMin; y <= yMax; ++y) {
             const x = k - y;
             temp.push(matrix[y][x])
-            // console.log(temp)
-            // console.log(matrix[y][x])
         }
-        Arr.push(temp)
+        // console.log(temp.sort())
+
+        if(temp.length > 0) Arr.push(temp.sort())
+
+        // console.log(dict[0])
+        
     }
-    return Arr
+
+    for (let k = 0; k <= matrix.length - 1; k++) {
+        let tempResult = [];
+        let arr = Arr.filter((a) => a.length > 0);
+        console.log(arr, Arr);
+        for (let i = 0; i <= matrix.length - 1; i++) {
+            const length = arr[i].length;
+            tempResult.push(arr[i][length - 1]);
+            Arr[Arr.indexOf(arr[i])].pop();
+        }
+        result.push(tempResult)
+        // console.log(tempResult)
+        // console.log(Arr)
+    }
+    return result
 }
 
 console.log(dict.diagnalOverFlow(Arr))
